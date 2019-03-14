@@ -1,8 +1,10 @@
 import React from 'react';
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
+import { Route, Link, withRouter } from 'react-router-dom';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider, Query } from 'react-apollo';
 import gql from 'graphql-tag';
+
+import Header from './Header';
 
 const client = new ApolloClient({
   uri: 'http://localhost:3001/graphql/',
@@ -26,7 +28,10 @@ const Api = () => (
   <Query
     query={gql`
       query {
-        message
+        organisations {
+          name
+          slug
+        }
       }
     `}
   >
@@ -35,7 +40,7 @@ const Api = () => (
       if (error) return <p>Error :(</p>;
       return (
         <div>
-          <p>{data.message}</p>
+          <p>{data}</p>
           <RouteCompnent />
         </div>
       );
@@ -59,14 +64,13 @@ const InfoComponent = () => (
 
 const App = () => (
   <ApolloProvider client={client}>
-    <Router>
-      <div>
-        <Route path="/" exact component={Home} />
-        <Route path="/api" component={Api} />
-        <Route path="/info" component={InfoComponent} />
-      </div>
-    </Router>
+    <div>
+      <Header />
+      <Route path="/" exact component={Home} />
+      <Route path="/api" component={Api} />
+      <Route path="/info" component={InfoComponent} />
+    </div>
   </ApolloProvider>
 );
 
-export default App;
+export default withRouter(App);

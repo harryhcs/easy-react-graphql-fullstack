@@ -32,7 +32,7 @@ export const init = () => {
   }
   Model.knex(knex(connectionDetails));
   // TODO - replace absolute path
-  addAllModelsForRelations(requireContext('../../api/models', false, /\.js$/));
+  addAllModelsForRelations(requireContext('../../src/api/models', false, /\.js$/));
 };
 
 export default {

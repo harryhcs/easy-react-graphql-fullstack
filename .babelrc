@@ -4,19 +4,14 @@
       "@babel/preset-env",
       {
         "targets": {
-          "node": "current"
+          "node": "current",
         },
         "useBuiltIns": "usage"
       }
-    ]
+    ],
+    "@babel/preset-react",
   ],
   "plugins": [
-    [
-      "@babel/plugin-proposal-decorators",
-      {
-        "legacy": true
-      }
-    ],
     [
       "@babel/plugin-proposal-class-properties",
       {
@@ -26,7 +21,7 @@
     "@babel/plugin-proposal-export-default-from",
     "@babel/plugin-proposal-object-rest-spread",
     [
-      "babel-plugin-module-resolver",
+      "module-resolver",
       {
         "alias": {
           "src": "./src"

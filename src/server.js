@@ -1,15 +1,16 @@
 import path from 'path';
 import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
-import config from './webpack.config.babel';
+import config from '../webpack.config';
 import Express from 'express';
-import server from './lib/graphql';
+import server from './api/lib/graphql';
 
 const app = new Express();
 const port = 3001;
 const compiler = webpack(config);
 
 server.applyMiddleware({ app });
+
 
 app.use(
   webpackDevMiddleware(compiler, {

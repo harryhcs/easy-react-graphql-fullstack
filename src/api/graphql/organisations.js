@@ -1,4 +1,4 @@
-import { gql } from 'apollo-server';
+import { gql, AuthenticationError } from 'apollo-server';
 
 import Organisation from '../models/Organisations';
 
@@ -25,7 +25,15 @@ export const typeDefs = gql`
 
 export const resolvers = {
   Query: {
-    organisations: () => Organisation.query(),
+    organisations: async (_,{}, { user }) => {
+      try {
+        const email = await user;
+        const org = await Organisation.query();
+        return org;
+      } catch (e) {
+        throw new AuthenticationError('You must be logged in to do this');
+      }
+    },
   },
   Mutation: {
     organisationCreate: (_, args) => (
