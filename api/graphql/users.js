@@ -30,9 +30,9 @@ export const resolvers = {
     users: () => User.query(),
   },
   Mutation: {
-    userCreate: (_, args) => {
-      return User.query().insert(args.user);
-    },
+    userCreate: (_, args) => (
+      User.query().insert(args.user)
+    ),
   },
 
   User: {
