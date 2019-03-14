@@ -7,7 +7,7 @@ After cloning the project, cd into it and install all the required node packages
 yarn install
 ```
 
-##Setting up your environmental variables
+## Setting up your environmental variables
 The app is setup to use postgresql, this can be changed by updating the config file in **api/config/database.dev.js** (knex config). You will need to create a
 **.env** file with the following content in it:
 ```
