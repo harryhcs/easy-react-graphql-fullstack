@@ -1,0 +1,51 @@
+{
+  "name": "api",
+  "version": "0.0.0",
+  "description": "Easy React-graphql Fullstack example",
+  "scripts": {
+    "start": "babel-node server.js",
+    "lint": "eslint ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/harryhcs/easy-react-graphql-fullstack.git"
+  },
+  "license": "GPL-3.0",
+  "dependencies": {
+    "apollo-server": "^2.4.8",
+    "apollo-server-express": "^2.4.8",
+    "babel-polyfill": "^6.3.14",
+    "dotenv": "^6.2.0",
+    "express-graphql": "^0.7.1",
+    "graphql": "^14.1.1",
+    "graphql-iso-date": "^3.6.1",
+    "knex": "^0.16.3",
+    "objection": "^1.6.3",
+    "objection-password": "^2.0.0",
+    "pg": "^7.8.2",
+    "require-context": "^1.1.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/node": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-proposal-decorators": "^7.1.2",
+    "@babel/plugin-proposal-export-default-from": "^7.0.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-module-resolver": "^3.1.1",
+    "babel-register": "^6.3.13",
+    "eslint": "^2.9.0",
+    "eslint-config-airbnb": "^8.0.0",
+    "eslint-plugin-import": "^1.6.1",
+    "eslint-plugin-jsx-a11y": "^1.0.4",
+    "eslint-plugin-react": "^5.0.1",
+    "express": "^4.13.3",
+    "prettier-eslint": "^8.8.2",
+    "webpack": "^4.29.6",
+    "webpack-dev-middleware": "^1.2.0"
+  }
+}
