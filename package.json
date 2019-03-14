@@ -6,7 +6,6 @@
   ],
   "scripts": {
     "start": "yarn workspace api start",
-    "lint": "eslint api & eslint client",
-    "build": "yarn workspace api build && yarn workspace client build"
+    "lint": "eslint api & eslint client"
   }
 }
